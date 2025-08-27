@@ -8,26 +8,12 @@ const NoteForm = ({notes, setNotes}) => {
         description: '',
       });
   
-const handleChange = (e) => {
-    e.preventDefault();
-    //validation
-    if(!formData.title|| !formData.description)
-        return
-    //Add notes to state
-    const newNote={
-        ...formData,
-        id: Date.now()
-    }
-    setNotes([...notes, newNote]);
-    //rest form
-    setFormData({
-        title: '',
-        priority: 'medium',
-        category: '',
-        description: '',
-      });
-
-    };
+      const handleChange = (e) => {
+        setFormData({
+          ...formData,
+          [e.target.name]: e.target.value,
+        });
+      };
     
     const handleSubmit = (e) => {
         e.preventDefault();
