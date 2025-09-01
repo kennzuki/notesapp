@@ -1,18 +1,19 @@
-const TextInputs = ({ label, name, value, onchange, required = false }) => {
+const TextInput = ({ label, name, value, onChange, required = false }) => {
   return (
     <div className='mb-4'>
-      <label htmlFor={name} className='block font-semibold p-2'>
+      <label htmlFor={name} className='block font-semibold'>
         {label}
       </label>
       <input
-        className='border border-gray-400 p-2 w-full rounded-lg'
         name={name}
+        type='text'
+        className='w-full p-2 border rounded-lg'
         value={value}
-        onChange={onchange}
+        onChange={onChange}
         required={required}
       />
     </div>
   );
 };
 
-export default TextInputs;
+export default TextInput;
